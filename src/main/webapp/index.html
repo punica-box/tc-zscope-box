@@ -66,11 +66,12 @@
 
 <script type="text/javascript">
 function search() {
+
  var passPwd = $('#passPwd').val();
  var scopePubAddress = $('#scopePubAddress').val();
  var reqData = JSON.stringify(eval({"passPwd":passPwd,"scopePubAddress":scopePubAddress}));
  $.ajax({
-    url: "/microScopeWeb/getScope",
+    url: "/ZScopeWeb/getScope",
     data: reqData,
     async: false,
     contentType:"application/json",
@@ -78,12 +79,18 @@ function search() {
     dataType:"html",
     success:function(data) {
     console.log("111111111:"+data);
-    data = eval("("+data+")");
-    var showUrl = data.data;
-    window.open(showUrl);
+    //data = eval("("+data+")");
+    if(data != null){
+      var showUrl = data;
+      window.open(showUrl);
+    }
+    
     }
 });
 
+/****
+window.open("http://www.inke.cn/live.html?uid=242236785");
+*/
             
         }
 </script>

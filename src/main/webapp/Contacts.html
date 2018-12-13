@@ -21,8 +21,9 @@
 					<h1><a href="index.html" id="logo">Sciencelab</a></h1>
 					<form id="search" method="post">
 						<div>
-							<input type="submit" class="submit" value="">
-							<input type="text" class="input">
+							<input type="submit" class="submit" onclick="search()" >
+							<input type="text" class="input" id="passPwd" placeholder="Your Password">
+							<input type="text" class="input" id="scopePubAddress" placeholder="Public Address">
 						</div>
 					</form>
 				</div>
@@ -92,5 +93,32 @@
 <!-- / content -->
 	</div>
 </div>
+<script type="text/javascript">
+function search() {
+
+/***
+ var passPwd = $('#passPwd').val();
+ var scopePubAddress = $('#scopePubAddress').val();
+ var reqData = JSON.stringify(eval({"passPwd":passPwd,"scopePubAddress":scopePubAddress}));
+ $.ajax({
+    url: "/microScopeWeb/getScope",
+    data: reqData,
+    async: false,
+    contentType:"application/json",
+    type: "POST",
+    dataType:"html",
+    success:function(data) {
+    console.log("111111111:"+data);
+    data = eval("("+data+")");
+    var showUrl = data.data;
+    window.open(showUrl);
+    }
+});
+*/
+window.open("http://www.inke.cn/live.html?uid=242236785");
+
+            
+        }
+</script>
 </body>
 </html>
